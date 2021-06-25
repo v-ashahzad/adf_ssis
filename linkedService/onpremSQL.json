@@ -1,0 +1,23 @@
+{
+	"name": "onpremSQL",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Data Source=6CW4L13;Initial Catalog=ADF;User ID=ssis_user",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "ssispassword"
+			}
+		},
+		"connectVia": {
+			"referenceName": "ir-shir",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
